@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Play View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayViewController" customModule="RockPaperScissor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ms8-pl-Mmq">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2b-a8-668">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="193.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzP-HF-pSo">
+                                                <rect key="frame" x="243" y="108.5" width="75" height="65"/>
+                                                <state key="normal" image="rock"/>
+                                                <connections>
+                                                    <action selector="pressStone" destination="BYZ-38-t0r" eventType="touchUpInside" id="yU1-cE-7yn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lzP-HF-pSo" firstAttribute="centerX" secondItem="j2b-a8-668" secondAttribute="centerX" id="UHS-Dv-R1t"/>
+                                            <constraint firstAttribute="bottom" secondItem="lzP-HF-pSo" secondAttribute="bottom" constant="20" symbolic="YES" id="aDV-wa-mCT"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uXr-TZ-gNv">
+                                        <rect key="frame" x="0.0" y="193" width="560" height="193"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSf-vH-ZaG">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="193"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOQ-JD-Jh1">
+                                                        <rect key="frame" x="103" y="64" width="75" height="65"/>
+                                                        <state key="normal" image="paper"/>
+                                                        <connections>
+                                                            <action selector="pressPaper" destination="BYZ-38-t0r" eventType="touchUpInside" id="km6-me-xB4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="TOQ-JD-Jh1" firstAttribute="centerY" secondItem="xSf-vH-ZaG" secondAttribute="centerY" id="6gi-Zy-iFz"/>
+                                                    <constraint firstItem="TOQ-JD-Jh1" firstAttribute="centerX" secondItem="xSf-vH-ZaG" secondAttribute="centerX" id="x8r-lB-xBQ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-sz-JMu">
+                                                <rect key="frame" x="280" y="0.0" width="280" height="193"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xu-7r-yJY">
+                                                        <rect key="frame" x="103" y="64" width="75" height="65"/>
+                                                        <state key="normal" image="scissors"/>
+                                                        <connections>
+                                                            <segue destination="wA7-Us-NUZ" kind="presentation" identifier="pressScissor" id="wsM-wD-Hct"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="8Xu-7r-yJY" firstAttribute="centerX" secondItem="MhJ-sz-JMu" secondAttribute="centerX" id="cxy-vh-tXN"/>
+                                                    <constraint firstItem="8Xu-7r-yJY" firstAttribute="centerY" secondItem="MhJ-sz-JMu" secondAttribute="centerY" id="jr5-aA-r2d"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-FI-ppE">
+                                        <rect key="frame" x="0.0" y="386" width="560" height="193.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Rock Paper Scissor!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwp-xO-Dxo">
+                                                <rect key="frame" x="185" y="20" width="188.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="jwp-xO-Dxo" firstAttribute="centerX" secondItem="Vfu-FI-ppE" secondAttribute="centerX" id="0Hj-a8-O3E"/>
+                                            <constraint firstItem="jwp-xO-Dxo" firstAttribute="top" secondItem="Vfu-FI-ppE" secondAttribute="top" constant="20" symbolic="YES" id="vcL-KY-WDQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ms8-pl-Mmq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BwR-Sd-uQV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ms8-pl-Mmq" secondAttribute="trailing" id="QwP-io-MBf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ms8-pl-Mmq" secondAttribute="bottom" id="q0T-8b-Hnp"/>
+                            <constraint firstItem="ms8-pl-Mmq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xrI-f5-sVK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="wA7-Us-NUZ" kind="presentation" identifier="pressPaper" id="Qm4-j0-tsk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293" y="349"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="50g-Av-e03">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="wA7-Us-NUZ" customClass="ResultViewController" customModule="RockPaperScissor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i4E-uW-Jvc"/>
+                        <viewControllerLayoutGuide type="bottom" id="3fM-bm-pC4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="slO-rw-Lb2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PaperCoversRock" translatesAutoresizingMaskIntoConstraints="NO" id="6fS-sS-utq">
+                                <rect key="frame" x="100" y="0.0" width="400" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6fS-sS-utq" secondAttribute="height" multiplier="4:3" id="pRJ-JA-ZvO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-y7-KVy">
+                                <rect key="frame" x="279" y="308" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lD-P7-iOV">
+                                <rect key="frame" x="262" y="463.5" width="76" height="30"/>
+                                <state key="normal" title="Play Again!"/>
+                                <connections>
+                                    <action selector="playAgain" destination="wA7-Us-NUZ" eventType="touchUpInside" id="aFv-57-dPa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8lD-P7-iOV" firstAttribute="centerX" secondItem="slO-rw-Lb2" secondAttribute="centerX" id="B6q-bB-Ekb"/>
+                            <constraint firstItem="6fS-sS-utq" firstAttribute="bottom" secondItem="slO-rw-Lb2" secondAttribute="centerY" id="BtA-9l-cgr"/>
+                            <constraint firstItem="3fM-bm-pC4" firstAttribute="top" secondItem="8lD-P7-iOV" secondAttribute="bottom" multiplier="1.2" constant="8" symbolic="YES" id="KIM-wE-uNu"/>
+                            <constraint firstItem="w0v-y7-KVy" firstAttribute="top" secondItem="6fS-sS-utq" secondAttribute="bottom" constant="8" symbolic="YES" id="Tk2-r5-dSP"/>
+                            <constraint firstItem="6fS-sS-utq" firstAttribute="width" secondItem="slO-rw-Lb2" secondAttribute="width" multiplier="1:1.5" id="jWp-vp-tta"/>
+                            <constraint firstItem="6fS-sS-utq" firstAttribute="centerX" secondItem="slO-rw-Lb2" secondAttribute="centerX" id="nAv-wY-rqW"/>
+                            <constraint firstItem="w0v-y7-KVy" firstAttribute="centerX" secondItem="6fS-sS-utq" secondAttribute="centerX" id="qHn-wz-8Wy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImage" destination="6fS-sS-utq" id="BmO-vL-bLK"/>
+                        <outlet property="resultLabel" destination="w0v-y7-KVy" id="owf-rx-9xG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Cr-rk-bwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293" y="1338"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PaperCoversRock" width="160" height="120"/>
+        <image name="paper" width="75" height="65"/>
+        <image name="rock" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wsM-wD-Hct"/>
+    </inferredMetricsTieBreakers>
+</document>
